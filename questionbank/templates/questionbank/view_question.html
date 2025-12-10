@@ -1,0 +1,12 @@
+{% extends 'questionbank/base.html' %}
+
+{% block title %}View Question - Question Bank{% endblock %}
+
+{% block content %}
+<h3>Question Details</h3>
+
+<p><strong>Q:</strong> {{ question.question_text }}</p>
+<p><strong>A:</strong> {{ question.answer_text }}</p>
+
+<a href="{% url 'questionbank_home' %}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}

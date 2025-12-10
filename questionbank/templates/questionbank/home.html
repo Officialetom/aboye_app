@@ -1,0 +1,20 @@
+{% extends 'questionbank/base.html' %}
+
+{% block title %}Home - Question Bank{% endblock %}
+
+{% block content %}
+<div class="buttons">
+    <a href="{% url 'download_txt' %}" class="btn btn-success">Download TXT</a>
+</div>
+
+{% if questions %}
+    {% for q in questions %}
+    <div class="question-item">
+        <h4>{{ q.question_text|truncatechars:100 }}</h4>
+        <a href="{% url 'view_question' q.id %}" class="btn btn-secondary">View Details</a>
+    </div>
+    {% endfor %}
+{% else %}
+    <p class="empty">No questions added yet.</p>
+{% endif %}
+{% endblock %}

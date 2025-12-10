@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Question Bank{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'questionbank/style.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="container-nav">
+        <h1>Question Bank App</h1>
+        <nav>
+            <a href="{% url 'questionbank_home' %}">Home</a>
+            <a href="{% url 'download_txt' %}">Download TXT</a>
+            <a href="/admin/" target="_blank">Admin</a>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container-footer">
+        &copy; {{ year }} Question Bank App | Developed by Aboye John Odey
+    </div>
+</footer>
+
+</body>
+</html>

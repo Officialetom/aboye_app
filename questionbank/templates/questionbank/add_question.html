@@ -1,0 +1,18 @@
+{% extends 'questionbank/base.html' %}
+
+{% block title %}Add Question - Question Bank{% endblock %}
+
+{% block content %}
+<h3>Add New Question</h3>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Question</label>
+    {{ form.question_text }}
+
+    <label>Answer</label>
+    {{ form.answer_text }}
+
+    <button type="submit" class="submit-btn">Save Question</button>
+</form>
+{% endblock %}
